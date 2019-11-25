@@ -1,0 +1,55 @@
+html {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.history {
+  width: 600px;
+  margin: 0 auto;
+  font-size: 16px;
+  justify-content: space-between;
+  height: 40px;
+}
+
+.thead {
+  background-color: rgb(224, 221, 221);
+  text-transform: uppercase;
+  display: flex;
+  font-size: 12px;
+  width: 100%;
+}
+
+.tr {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.th {
+  width: 33.33%;
+  border-left: 1px solid rgb(247, 244, 244);
+  border-right: 1px solid rgb(247, 244, 244);
+  padding: 12px;
+}
+
+.tbody {
+  display: flex;
+  font-size: 12px;
+  width: 100%;
+  border: 1px solid rgb(224, 221, 221);
+  background-color: white;
+  text-align: center;
+  flex-direction: column;
+}
+
+.item {
+  padding: 12px;
+  width: 33.33%;
+  border: 1px solid rgb(224, 221, 221);
+}
