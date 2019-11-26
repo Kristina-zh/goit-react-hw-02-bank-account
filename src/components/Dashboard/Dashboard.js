@@ -13,6 +13,29 @@ export default class Dashboard extends Component {
     amount: '',
   };
 
+  componentDidMount() {
+    try {
+      const transactionsFromLS = localStorage.getItem('transactions');
+      const balanceFromLS = localStorage.getItem('balance');
+      if (transactionsFromLS) {
+        const transactions = JSON.parse(transactionsFromLS);
+        const balance = JSON.parse(balanceFromLS);
+        this.setState({ transactions, balance });
+      }
+    } catch (error) {
+      console.log('error :', error);
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { transactions, balance } = this.state;
+
+    if (prevState.transactions !== transactions) {
+      localStorage.setItem('transactions', JSON.stringify(transactions));
+      localStorage.setItem('balance', JSON.stringify(balance));
+    }
+  }
+
   notifyA = () => toast('Введите сумму для проведения операции!');
 
   notifyB = () =>
